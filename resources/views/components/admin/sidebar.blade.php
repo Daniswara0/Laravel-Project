@@ -85,6 +85,31 @@
                     </svg>
                 </x-slot>
             </x-admin.menu-item>
+
+            <!-- Subjects Menu -->
+            <x-admin.menu-item :href="route('admin.subjects.index')" :active="request()->routeIs('admin.subjects.*')" label="Subjects">
+                <x-slot name="icon">
+                    <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M9 480c-17.7 0-32-14.3-32-32s14.3-32 32-32h320c17.7 0 32 14.3 32 32s-14.3 32-32 32H9lz">
+                        </path>
+                        <path fill-rule="evenodd"
+                            d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2H6zm1 2h6v2H7V4zm6 6H7v2h6v-2z"
+                            clip-rule="evenodd"></path>
+                    </svg>
+                </x-slot>
+            </x-admin.menu-item>
+
+            <!-- Teachers Menu -->
+            <x-admin.menu-item :href="route('admin.teachers.index')" :active="request()->routeIs('admin.teachers.*')" label="Teachers">
+                <x-slot name="icon">
+                    <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"></path>
+                    </svg>
+                </x-slot>
+            </x-admin.menu-item>
         </ul>
 
         </ul>

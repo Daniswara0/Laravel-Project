@@ -4,7 +4,7 @@
         <div class="flex justify-between items-center mb-4">
             <h2 class="text-xl font-bold text-gray-900 dark:text-white">Daftar Classroom</h2>
         </div>
- 
+
         <div class="overflow-x-auto">
             <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -12,6 +12,7 @@
                         <th scope="col" class="px-4 py-3">ID</th>
                         <th scope="col" class="px-4 py-3">Nama Kelas</th>
                         <th scope="col" class="px-4 py-3">Jurusan</th>
+                        <th scope="col" class="px-4 py-3">Daftar Siswa</th> <!-- Kolom untuk siswa -->
                         <th scope="col" class="px-4 py-3">Dibuat Pada</th>
                     </tr>
                 </thead>
@@ -25,11 +26,19 @@
                                 {{ strtoupper($classroom->major) }}
                             </span>
                         </td>
+
+                        <!-- Penempatan nama students -->
+                        <td class="px-4 py-3">
+                            @foreach ($classroom->students as $student)
+                                {{ $student->nama }} <br>
+                            @endforeach
+                        </td>
+
                         <td class="px-4 py-3">{{ $classroom->created_at }}</td>
                     </tr>
                     @empty
                     <tr>
-                        <td colspan="4" class="px-4 py-4 text-center text-gray-500 dark:text-gray-400">
+                        <td colspan="5" class="px-4 py-4 text-center text-gray-500 dark:text-gray-400">
                             Belum ada data classroom yang tersedia.
                         </td>
                     </tr>

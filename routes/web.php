@@ -5,6 +5,8 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ClassroomController;
+use App\Http\Controllers\SubjectController;
+use App\Http\Controllers\TeacherController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -37,3 +39,8 @@ Route::get('/admin/student', function () {
 Route::get('/admin/studentCtrl', [StudentController::class, 'index'])->name('admin.studentCtrl');
 
 Route::get('/admin/classrooms', [ClassroomController::class, 'index'])->name('classrooms.index');
+
+// Perbaikan di sini (ditambah prefix /admin/ dan nama admin.)
+Route::get('/admin/subjects', [SubjectController::class, 'index'])->name('admin.subjects.index');
+
+Route::get('/admin/teachers', [TeacherController::class, 'index'])->name('admin.teachers.index');
