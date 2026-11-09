@@ -64,7 +64,7 @@
                 </x-slot>
             </x-admin.menu-item> --}}
 
-            <x-admin.menu-item :href="route('admin.studentCtrl')" label="Student (Controller)">
+            <x-admin.menu-item :href="route('students.index')" :active="request()->routeIs('students.*')" label="Student (Controller)">
                 <x-slot name="icon">
                     <svg aria-hidden="true" class="flex-shrink-0 w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">

@@ -36,7 +36,7 @@ Route::get('/admin/student', function () {
     return view('admin.student');
 })->name('admin.student');
 
-Route::get('/admin/studentCtrl', [StudentController::class, 'index'])->name('admin.studentCtrl');
+Route::resource('admin/students', StudentController::class);
 
 Route::get('/admin/classrooms', [ClassroomController::class, 'index'])->name('classrooms.index');
 
